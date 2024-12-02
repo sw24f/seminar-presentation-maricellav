@@ -1,0 +1,260 @@
+documentclass{beamer}
+
+\title{Statistical Modeling: The Two Cultures by Leo Brieman}
+\author{Maricella Velita}
+\date{\today}
+
+\begin{document}
+
+% Title Slide
+\begin{frame}
+    \titlepage
+\end{frame}
+
+% Regular Slide
+\begin{frame}{Abstract}
+      \begin{itemize}
+        \item The goal is to demonstrate how algorithmic models improve prediction accuracy and offer deeper insights into complex data that traditional methods may overlook. The author explains how algorithmic models, such as random forests, are better at dealing with large datasets, identifying key variables, and detecting patterns that simpler models cannot. The paper critiques the over reliance on traditional data models, arguing that the best approach should depend on the nature of the data and the problem itself, not just sticking to a specific model. Though the author is not against data modeling, they advocate for using both data modeling and algorithmic modeling to solve real world problems 
+    \end{itemize}
+\end{frame}
+
+% Another% Slide 2: Contrasting Statistical Cultures
+\begin{frame}{Contrasting Statistical Cultures: Data vs. Algorithmic Modeling}
+    \textbf{Two Cultures in Statistics:}
+    \begin{itemize}
+        \item \textbf{Data Modeling:}
+        \begin{itemize}
+            \item Uses predefined models (e.g., linear regression, logistic regression).
+            \item Focuses on understanding variable relationships and data-generating processes.
+        \end{itemize}
+        \item \textbf{Algorithmic Modeling:}
+        \begin{itemize}
+            \item Treats relationships as complex or unknown.
+            \item Relies on algorithms (e.g., decision trees, neural networks).
+            \item Measures model performance based on predictive accuracy.
+        \end{itemize}
+    \end{itemize}
+\end{frame}
+
+% Slide 3: Brieman's Critique
+\begin{frame}{Brieman’s Critique}
+    \begin{itemize}
+        \item Dominance of data modeling has led to irrelevant theory and limited practical applications.
+        \item Algorithmic models prioritize predictive accuracy, proving valuable in fields like medicine and genetics.
+        \item The paper explores algorithmic modeling, recent advances, and practical applications in detail.
+        \item Brieman suggests statisticians should embrace algorithmic models and move beyond the constraints of traditional data models.
+    \end{itemize}
+\end{frame}
+
+% Slide 4: Data Modeling
+\begin{frame}{Data Modeling}
+    \textbf{Traditional Approach to Data Models:}
+    \begin{itemize}
+        \item Assumes data originates from specific models.
+        \item Often fails to represent real-world mechanisms.
+        \item Overemphasis on hypothetical models.
+        \item Data models are often parametric, assuming a specific structure for relationships in data.
+        \item Rely on assumptions that may not reflect the complexities of nature.
+    \end{itemize}
+\end{frame}
+
+% Slide 5: Challenges and Limitations
+\begin{frame}{Challenges and Limitations}
+    \textbf{Limitations:}
+    \begin{itemize}
+        \item \textbf{Model fit:} Conclusions depend on how well the model represents reality.  Poorly fitting models can lead to erroneous conclusions
+         \item \textbf{Goodness-of-fit tests:} These tests, including residual analysis, often lack the power to detect poor fits, especially in high-dimensional data. Can lead to misleading conclusions about model accuracy 
+             \end{itemize}
+    \textbf{Challenges in Statistical Modeling:}
+    \begin{itemize}
+        \item \textbf{Multiplicity of models:}
+        \begin{itemize}
+            \item Many models can fit the same data but yield different conclusions.
+            \item Leads to ambiguity in understanding the true relationship between variables. 
+        \end{itemize}
+    \end{itemize}
+\end{frame}
+
+% Slide 6: Predictive Accuracy
+\begin{frame}{Predictive Accuracy}
+    \begin{itemize}
+        \item A better measure of model performance is predictive accuracy (how well the model predicts unseen data) 
+        \item Techniques like cross-validation are recommended to assess predictive accuracy more reliably, yet they remain underused in traditional statistical practices.  
+        \item Cross validation reduces bias in predictive accuracy estimates 
+    \end{itemize}
+\end{frame}
+
+%Slide 7: Example
+\begin{frame}{Example}
+    \textbf{Gender Discrimination Study:}
+    \begin{itemize}
+        \item A regression analysis concluded there was gender discrimination in salaries based on a significant coefficient for gender. However, this conclusion might be invalid due to: 
+        \begin{itemize}
+            \item Lack of validation of the linear model’s assumptions.
+            \item Over-reliance on the 5 percent significance threshold
+            \item Failure to critically assess the data’s capacity to address the research question.
+            \item Focus on the model rather than the problem itself.
+        \end{itemize}
+    \end{itemize}
+\end{frame}
+
+% Slide 8 Summary of Challenges in Statistical Modeling
+\begin{frame}{Summary of Challenges in Statistical Modeling}
+    Key issues highlighted:
+    \begin{itemize}
+        \item Overemphasis on hypothetical models over real-world data
+        \item Inadequate tools for assessing model fit in complex datasets
+        \item Lack of focus on predictive accuracy
+    \end{itemize}
+    Proposed solutions:
+    \begin{itemize}
+        \item Broaden the statistical toolbox with algorithmic and non-parametric methods
+        \item Prioritize predictive accuracy through cross-validation
+        \item Combine traditional and algorithmic methods
+    \end{itemize}
+\end{frame}
+
+% Slide 9 Algorithmic Modeling
+\begin{frame}{Algorithmic Modeling}
+    \begin{itemize}
+        \item Allows for more accurate and flexible representation of real-world situations compared to traditional modeling techniques.
+        \item Unlike traditional models, it does not assume a specific form or structure for how data is generated.
+        \item Handles complex, non-linear, and high dimensional data more effectively than traditional methods.
+        \item Prioritizes predictive accuracy over interpretability.
+    \end{itemize}
+    Historical context:
+    \begin{itemize}
+        \item Algorithmic approaches have been applied in fields like industrial statistics and medical data.
+        \item Prominence began in the 1980s with neural networks, decision trees.
+        \item Used where traditional models failed (e.g., speech recognition and financial predictions).
+    \end{itemize}
+\end{frame}
+
+% Slide 10 Lessons from Machine Learning
+\begin{frame}{Lessons from Machine Learning}
+    \begin{itemize}
+        \item Rashomon Effect: multiple models can have similar accuracy, creating uncertainty about which model is best.
+        \item Occam’s razor: simpler models are interpretable but may sacrifice accuracy.
+        \item Dimensionality: high variable count increases model complexity, posing challenges and opportunities.
+    \end{itemize}
+\end{frame}
+
+% Slide 11 Occam and Simplicity vs. Accuracy
+\begin{frame}{Occam and Simplicity vs. Accuracy}
+    \begin{itemize}
+        \item Occam’s razor suggests simpler models are better, but in predictive analytics, simplicity often sacrifices accuracy.
+        \begin{itemize}
+            \item Example: decision trees are interpretable but less accurate than complex models like random forests or neural networks.
+        \end{itemize}
+        \item Occam's Dilemma: accuracy often requires more complex models, but these models may be harder to interpret.
+        \begin{itemize}
+            \item RF combines multiple decision trees, making predictions difficult to interpret.
+        \end{itemize}
+    \end{itemize}
+\end{frame}
+
+% Slide 12 Random Forests
+\begin{frame}{Random Forests}
+    \begin{itemize}
+        \item Random forests are top-performing predictive models.
+        \item Consistently ranked highly across datasets.
+        \item A group of decision trees, significantly improve prediction accuracy by introducing randomness in model construction.
+        \item Reduce test set errors more effectively than single trees or other classifiers.
+        \item Downside: they are nearly impossible to interpret.
+    \end{itemize}
+\end{frame}
+
+% Slide 13 Interpretability vs. Predictive Accuracy
+\begin{frame}{Interpretability vs. Predictive Accuracy}
+    \begin{itemize}
+        \item Modern predictive methods, like random forests often sacrifice interpretability for accuracy.
+        \item The goal is not simplicity but obtaining reliable information about the relationship between predictor and response variables.
+        \item Complex models can reveal insights that are not accessible through traditional models like logistic regression.
+    \end{itemize}
+\end{frame}
+
+% Slide 14 Dimensionality
+\begin{frame}{Dimensionality}
+    Traditional view:
+    \begin{itemize}
+        \item High dimensional data should be reduced to avoid overfitting.
+    \end{itemize}
+    New perspective:
+    \begin{itemize}
+        \item Increasing dimensionality by adding features can enhance predictive performance.
+        \item Complex models like RF benefit from large feature sets.
+    \end{itemize}
+\end{frame}
+
+% Slide 15 Leveraging Features in High Dimensions
+\begin{frame}{Leveraging Features in High Dimensions}
+    Effective methods:
+    \begin{itemize}
+        \item Shape Recognition Forest: uses shallow decision trees and geometric features for decisions. Achieved a test set error rate of 0.7 percent using large training and test set.
+        \item Support Vector Machines (SVM): Expands feature space using polynomial monomials of the original predictor variables.
+        \item However, excessive dimensionality may lead to high generalization error.
+    \end{itemize}
+\end{frame}
+
+% Slide 16 Examples of High-Dimensional Modeling
+\begin{frame}{Examples of High-Dimensional Modeling}
+       Variable importance in Medical Data:
+        \begin{itemize}
+        \item Random forests provided more reliable information about variable importance compared to logistic regression.
+        \item In a hepatitis dataset, traditional methods showed instability in identifying important variables.
+        \item Applications in medical and microarray data reveal patterns and relationships that simpler models may overlook.
+    \end{itemize}
+\end{frame}
+
+% Slide 17 Examples of Random Forest Applications
+\begin{frame}{Examples of Random Forest Applications}
+    Medical data (Hepatitis and Liver Disease):
+    \begin{itemize}
+        \item Highlighted key variables related to liver function and clustered class two patients into two distinct groups based on these tests.
+        \item Demonstrated the stability and utility of random forests in analyzing biomedical datasets.
+    \end{itemize}
+    Microarray data (Lymphoma):
+    \begin{itemize}
+        \item Analyzed a data set with over 4,600 variables and identified gene expressions with high precision, outperforming data models in accuracy and variable selection.
+    \end{itemize}
+\end{frame}
+
+% Slide 18 Algorithmic vs. Data Models
+\begin{frame}{Algorithmic vs. Data Models}
+    Algorithmic models:
+    \begin{itemize}
+        \item Focus on predictive accuracy and real-world problem solving.
+        \item Can process massive data sets with high-dimensional features (e.g., genetic data).
+        \item Does not require assumptions about the underlying data distribution.
+    \end{itemize}
+    Data models:
+    \begin{itemize}
+        \item Often emphasizes simplicity and interpretability but underperforms in complex datasets.
+        \item Tend to delete variables, risking the loss of important interactions.
+    \end{itemize}
+\end{frame}
+
+% Slide 19 Flexibility in Model Choice
+\begin{frame}{Flexibility in Model Choice}
+    
+       Algorithmic Modeling vs. Data Modeling.
+       \begin{itemize}
+        \item Statistical solutions should prioritize the specific problem and data over sticking to rigid models.
+        \item RF and similar models can provide better insights in larger datasets.
+        \item Algorithmic models offer greater accuracy and insights in complex datasets.
+    \end{itemize}
+\end{frame}
+
+% Slide 20 Conclusion
+\begin{frame}{Conclusion}
+    \begin{itemize}
+        \item The author urges that statisticians should embrace diverse tools (algorithmic and traditional) to solve real-world problems.
+        \item Real-world problems demand flexible methods that prioritize solving problems over adhering to specific model frameworks.
+        \item Statistical methods should be driven by the problem and the data, rather than the model.
+        \item Breiman does not oppose data modeling but encourages statisticians to explore beyond traditional methods.
+    \end{itemize}
+\end{frame}
+
+
+
+\end{document}
